@@ -8,8 +8,6 @@ function getSum(number,sum){
     
     return getSum(number.slice(1),sum);
 
-
-    return sum;
 }
 
 let sum =0;
