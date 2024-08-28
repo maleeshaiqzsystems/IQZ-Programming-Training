@@ -2,7 +2,7 @@ function shortestpath(graph, start, end) {
     let distance = {};
     let previous = {};
     let unvisited = new Set();
-    const numVertices = graph.length; // Total number of vertices
+    const numVertices = graph.length;
 
     // Initialize distances and the unvisited set
     for (let i = 0; i < numVertices; i++) {
@@ -48,7 +48,6 @@ function shortestpath(graph, start, end) {
     return path.reverse();
 }
 
-// Example graph represented as an adjacency matrix
 const graph = [
     [0, 4, Infinity, Infinity, Infinity, 2],
     [4, 0, 6, Infinity, Infinity, Infinity],
@@ -59,4 +58,4 @@ const graph = [
 ];
 
 console.log(shortestpath(graph, 2, 0));
-// Output should be: [2, 1, 0]
+
