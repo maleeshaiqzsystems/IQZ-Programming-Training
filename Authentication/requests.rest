@@ -1,0 +1,30 @@
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWFsZWVzaGEiLCJpYXQiOjE3MjU2MTA5NTUsImV4cCI6MTcyNTYxMTAxNX0.mlIAHwupoi3sWmQq_Rv4MI_wTaxGrPEBLZmwY0EKNkg
+###
+
+DELETE http://localhost:4000/logout
+Content-Type: application/json
+
+{
+    "token":
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWFsZWVzaGEiLCJpYXQiOjE3MjU2MTA5NTV9.1ULydQoqBKyayvEzG94Mu6q0ZGURjMxLJ71a6begyLs"
+}
+
+
+###
+
+POST http://localhost:4000/token
+Content-Type: application/json
+
+{
+    "token":
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWFsZWVzaGEiLCJpYXQiOjE3MjU2MTA5NTV9.1ULydQoqBKyayvEzG94Mu6q0ZGURjMxLJ71a6begyLs"
+}
+###
+
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "username":"Maleesha"
+}
