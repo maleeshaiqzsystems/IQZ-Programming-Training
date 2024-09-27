@@ -22,91 +22,91 @@
 
 
 
-//using callbacks 
+using callbacks 
 
-// function fetchUser(userId, callback){
-//     setTimeout (()=>{
-//         console.log("UserId :",userId);
-//         callback({userId:userId, username:"John"})
-//     },1000)
+function fetchUser(userId, callback){
+    setTimeout (()=>{
+        console.log("UserId :",userId);
+        callback({userId:userId, username:"John"})
+    },1000)
  
-// }
+}
 
-// function fetchOrder(username, callback){
-//     setTimeout(()=>{
-//         console.log("username : ",username);
-//         callback({orderId:1, item:"Rice"})
-//     },1000)
-// }
+function fetchOrder(username, callback){
+    setTimeout(()=>{
+        console.log("username : ",username);
+        callback({orderId:1, item:"Rice"})
+    },1000)
+}
 
-// function fetchOrdetails(orderId,callback){
-//     setTimeout(()=>{
-//         console.log("order id : ",orderId);
-//         callback({orderId:orderId, details: "shipped"});
-//     },1000)
-// }
-
-
-// //callback hell
-// fetchUser(101,(user)=>{
-//     fetchOrder(user.username,(orders)=>{
-//         fetchOrdetails(orders.orderId,(details)=>{
-//             console.log("orderDetails:  ",details)
-//         })
-//     })
-// })
+function fetchOrdetails(orderId,callback){
+    setTimeout(()=>{
+        console.log("order id : ",orderId);
+        callback({orderId:orderId, details: "shipped"});
+    },1000)
+}
 
 
+//callback hell
+fetchUser(101,(user)=>{
+    fetchOrder(user.username,(orders)=>{
+        fetchOrdetails(orders.orderId,(details)=>{
+            console.log("orderDetails:  ",details)
+        })
+    })
+})
 
-// //using promises 
 
-// function fetchUser(userId, callback){
-//     return new Promise((resolve)=>{
-//         setTimeout (()=>{
-//             console.log("UserId :",userId);
-//             resolve({userId:userId, username:"John"})
-//         },1000)
-//     })
+
+//using promises 
+
+function fetchUser(userId, callback){
+    return new Promise((resolve)=>{
+        setTimeout (()=>{
+            console.log("UserId :",userId);
+            resolve({userId:userId, username:"John"})
+        },1000)
+    })
     
-// }
+}
 
 
-// function fetchOrder(username, callback){
-//     return new Promise((resolve)=>{
-//         setTimeout(()=>{
-//             console.log("username : ",username);
-//             resolve({orderId:1, item:"Rice"})
-//         },1000)
-//     })
-// }
+function fetchOrder(username, callback){
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            console.log("username : ",username);
+            resolve({orderId:1, item:"Rice"})
+        },1000)
+    })
+}
     
 
-// function fetchOrdertails(orderId,callback){
-//     return new Promise((resolve)=>{
-//         setTimeout(()=>{
-//             console.log("order id : ",orderId);
-//             resolve({orderId:orderId, details: "shipped"});
-//         },1000)
-//     })
+function fetchOrdertails(orderId,callback){
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            console.log("order id : ",orderId);
+            resolve({orderId:orderId, details: "shipped"});
+        },1000)
+    })
     
-// }
+}
 
-// fetchUser(101)
-//     .then ((user)=>{
-//         return fetchOrder(user.username);
-//     })
-//     .then((orders)=>{
-//         return fetchOrdertails(orders.orderId);
-//     })
-//     .then ((details)=>{
-//         console.log("order details :", details);
-//     })
-//     .catch((error)=>{
-//         console.log("An error occurred:", error);
-//     })
+fetchUser(101)
+    .then ((user)=>{
+        return fetchOrder(user.username);
+    })
+    .then((orders)=>{
+        return fetchOrdertails(orders.orderId);
+    })
+    .then ((details)=>{
+        console.log("order details :", details);
+    })
+    .catch((error)=>{
+        console.log("An error occurred:", error);
+    })
 
 
-    //using async and await
+    using async and await
 
 
 
