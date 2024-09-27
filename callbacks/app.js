@@ -21,6 +21,9 @@
 // }, 1000);
 
 
+
+//using callbacks 
+
 function fetchUser(userId, callback){
     setTimeout (()=>{
         console.log("UserId :",userId);
@@ -52,3 +55,52 @@ fetchUser(101,(user)=>{
         })
     })
 })
+
+
+
+//using promises 
+
+function fetchUser(userId, callback){
+    return new Promise((resolve)=>{
+        setTimeout (()=>{
+            console.log("UserId :",userId);
+            resolve({userId:userId, username:"John"})
+        },1000)
+    })
+    
+}
+
+
+function fetchOrder(username, callback){
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            console.log("username : ",username);
+            resolve({orderId:1, item:"Rice"})
+        },1000)
+    })
+}
+    
+
+function fetchOrdertails(orderId,callback){
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            console.log("order id : ",orderId);
+            resolve({orderId:orderId, details: "shipped"});
+        },1000)
+    })
+    
+}
+
+fetchUser(101)
+    .then ((user)=>{
+        return fetchOrder(user.username);
+    })
+    .then((orders)=>{
+        return fetchOrdertails(orders.orderId);
+    })
+    .then ((details)=>{
+        console.log("order details :", details);
+    })
+    .catch((error)=>{
+        console.log("An error occurred:", error);
+    })
