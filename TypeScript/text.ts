@@ -1,2 +1,28 @@
-const x: number = 2 ;
-console.log(x);
+let x =2; // don't need to explicitly define the type 
+
+//x="hello"; //error
+x=2;
+x=-9;
+x=Infinity;
+x=-Infinity;
+x=0.67;
+
+let y: string;
+let z=10;
+y= "hello";
+y="3";
+y=`${z}`;
+
+let m:boolean;
+
+m=true;
+m=false;
+
+let result =null; //empty or non exist
+
+let marks = undefined; // undefined is more used as a placeholder that means a variable has been declared but has not yet been assigned a value
+
+let num : number | undefined = undefined;
+
+num=3
+num=6
