@@ -1,11 +1,11 @@
-let x =2; // don't need to explicitly define the type 
+let h =2; // don't need to explicitly define the type 
 
-//x="hello"; //error
-x=2;
-x=-9;
-x=Infinity;
-x=-Infinity;
-x=0.67;
+//h="hello"; //error
+h=2;
+h=-9;
+h=Infinity;
+h=-Infinity;
+h=0.67;
 
 let y: string;
 let z=10;

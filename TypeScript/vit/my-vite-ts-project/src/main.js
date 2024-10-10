@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("./style.css");
 const typescript_svg_1 = __importDefault(require("./typescript.svg"));
 const vite_svg_1 = __importDefault(require("/vite.svg"));
-const counter_ts_1 = require("./counter.ts");
+// import { setupCounter } from './counter.ts'
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -24,4 +24,4 @@ document.querySelector('#app').innerHTML = `
     </p>
   </div>
 `;
-(0, counter_ts_1.setupCounter)(document.querySelector('#counter'));
+// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
